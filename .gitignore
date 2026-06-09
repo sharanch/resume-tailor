@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# Output files
+*.pdf
+*.docx
+
+# JD and tailored drafts (keep base_resume.md, ignore working files)
+jd/
+tailored.md
+*_tailored.md
+*_resume.md
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+*.swp
+
+base/*
+!base/base_resume.md
+!base/resume_template.docx
