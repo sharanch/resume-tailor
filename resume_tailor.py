@@ -65,7 +65,7 @@ Internalize this structure: strong action → what was achieved → by what mean
 
 Rules:
 - Use past tense throughout — these are completed work items, not current duties
-- Vary the opening verb — do not repeat the same verb across bullets
+- CRITICAL: Every bullet must open with a DIFFERENT verb. Never use the same opening verb twice in the same entry. If you catch yourself writing "Architected" or any verb a second time, stop and pick a different one.
 - Use a KEY_VERB to open a bullet only where it genuinely fits the action; otherwise use the best past-tense verb
 - Replace generic terms with MUST_HAVE equivalents only where genuinely equivalent
 - Where a bullet mentions a tool or pattern that maps to a CORE_PILLAR, surface that connection naturally
@@ -189,7 +189,7 @@ def call_ollama(model: str, prompt: str, system: str,
     if as_json:
         body["format"] = "json"
 
-    timeout = 60 if as_json else 180  # fail fast per entry, not hang for 3 min
+    timeout = 180 if as_json else 300  # fail fast per entry, not hang for 3 min
 
     payload = json.dumps(body).encode("utf-8")
     req = urllib.request.Request(

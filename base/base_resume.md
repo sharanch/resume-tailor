@@ -4,8 +4,6 @@ LinkedIn | https://www.linkedin.com/in/sharanchenna/
 GitHub | https://github.com/sharanch/
 log-explainer | https://github.com/sharanch/log-explainer
 go-sre-observatory | https://github.com/sharanch/go-sre-observatory
-chatops | https://github.com/sharanch/chatops
-istio-mesh-demo | https://github.com/sharanch/istio-mesh-demo
 postgresql-ha-lab | https://github.com/sharanch/postgres-ha-resiliency-lab
 inkwell | https://github.com/sharanch/inkwell
 -->
@@ -53,32 +51,25 @@ SRE with 4+ years building and operating large-scale Linux and OCI Compute infra
 
 *Deliberately stepped back from employment to build depth in cloud-native, AIOps, and observability engineering. Shipped production-grade projects independently, each designed to demonstrate real operational patterns — not toy demos.*
 
-### [log-explainer](https://github.com/sharanch/log-explainer) — Python · Ollama · GitHub Actions · GHCR
-
-- AIOps CLI that tails live log files and uses a locally running LLM (Ollama, qwen2.5-coder:1.5b) to explain each line in real time — no data leaves the host, no API costs, fully privacy-preserving.
-- Two-pass severity classifier (INFO/WARN/ERROR/CRITICAL) with sliding-window spike detection and automated incident summarization triggered on pattern anomalies.
-- Ships as cross-platform installers (.deb, .rpm, .pkg, .msi) via a three-workflow GitHub Actions pipeline with lint → pytest (80%+ coverage gate) → Docker publish to GHCR → versioned releases on semver tags.
-
 ### [go-sre-observatory](https://github.com/sharanch/go-sre-observatory) — Go · Kubernetes · Prometheus · Grafana · Loki
 
-- End-to-end observability platform on Kubernetes — metrics, logs, and alerting built around a Go microservice with full RED metrics instrumentation, SLI definition, and deliberate SLO-breach simulation to keep the alerting pipeline continuously exercised.
-- Error budget tracking via PromQL recording rules; alert pipeline wired end to end: Prometheus → Alertmanager → Slack with severity routing and runbook-linked definitions. Single-command deploy and teardown via raw Kubernetes manifests.
+- Built a production-instrumented Go microservice (RED metrics via `prometheus/client_golang` — request counter, error counter, p99 latency histogram with custom buckets, in-flight gauge) and deployed it to Kubernetes alongside a load generator producing a 16 req/s baseline and 40 RPS periodic spikes — deliberately triggering SLO-breach conditions to keep the full alert pipeline exercised at all times.
+- Wired Prometheus → Alertmanager → Slack end to end with severity routing and runbook-linked alert annotations; centralized logs via Promtail → Loki, queryable alongside metrics in a Grafana dashboard built as the primary incident interface. Error budget tracked via PromQL recording rules. Full stack deploys or tears down in a single command.
 
-### [chatops](https://github.com/sharanch/chatops) — React · Node.js · PostgreSQL · ArgoCD · Helm
+### [postgresql-ha-lab](https://github.com/sharanch/postgres-ha-resiliency-lab) — CloudNativePG · Kubernetes · Prometheus · Grafana
 
-- Production-grade 3-tier application on Kubernetes with full GitOps via ArgoCD — sub-2-minute deploy cycles demonstrating reliability engineering and operational maturity.
-- Modular Helm charts with per-environment overrides; multi-stage Alpine builds reduced image size by ~60%, improving deployment reliability and reducing toil in release management.
-- GitHub Actions CI/CD with path-based triggers — only affected services rebuild on commit. Cloudflare Tunnel for zero-trust ingress.
+- Deployed a 3-replica CloudNativePG cluster on Kubernetes and validated RPO = 0 rows and RTO of 2.2–4.5s across 10+ automated chaos scenarios — pod kill, node drain, and write-during-failover durability runs with a concurrent writer verifying zero data loss throughout each failover event.
+- Defined SLIs for replication lag and failover time; tracked a 99.9% / 30-day error budget via PromQL recording rules and a custom Grafana SLO dashboard — confirmed budget exhaustion and Prometheus alert firing under a looped chaos scenario, producing screenshots used as validation evidence.
 
-### [istio-mesh-demo](https://github.com/sharanch/istio-mesh-demo) — Istio · Kubernetes · FastAPI · Kiali · Grafana
+### [log-explainer](https://github.com/sharanch/log-explainer) — Python · Ollama · ELK · GitHub Actions · GHCR
 
-- Service mesh on Kubernetes with full mTLS encryption via Envoy sidecars across distributed microservices — zero application code changes required.
-- Live canary pipeline shifting traffic 100/0 → 50/50 → 0/100; fault injection (5s delay on 50% of requests) validates frontend resilience and SLO compliance under degraded conditions.
+- AIOps CLI that tails live log files and pipes each line through a locally running LLM (Ollama) for real-time plain-English incident explanation — fully air-gapped, zero API costs, with an optional ELK pipeline mode that ships LLM-enriched JSON to Elasticsearch so Kibana incident views show the raw log and its AI explanation side by side.
+- Two-pass severity classifier (explicit keyword first, regex fallback for bare tracebacks and OOM events) with sliding-window spike detection and auto-generated incident summaries; ships as `.deb`/`.rpm` installers via a three-stage GitHub Actions pipeline — lint → pytest with 80%+ coverage gate → Docker publish to GHCR.
 
-### [postgresql-ha-lab](https://github.com/sharanch/postgres-ha-resiliency-lab) — CloudNativePG · Kubernetes
+### [inkwell](https://github.com/sharanch/inkwell) — Go · React · Kubernetes · Prometheus · Loki
 
-- HA PostgreSQL cluster on Kubernetes — RPO < 5s, RTO < 30s, validated via chaos scenarios (pod kill, node drain). Zero data loss across 10+ failure events.
-- Instrumented full observability stack with kube-prometheus-stack; SLIs defined for replication lag and failover time, validated against SLO targets under simulated failure conditions.
+- Built a 5-service Go microservices platform (Chi router, sqlx, golang-jwt, go-redis) using interface-based repository and client abstractions throughout — each service depends on interfaces, not concrete types, keeping unit tests independent of real database or Redis connections.
+- Implemented passwordless OTP auth: 6-digit codes generated via `crypto/rand`, stored in Redis with 10-minute TTL and per-email rate limiting, delivered by a dedicated notify-service over SMTP — JWT validated at the API gateway with `X-User-ID` header injection so downstream services trust the gateway without re-validating tokens. Instrumented the gateway with Prometheus RED metrics and centralized logs via Loki + Promtail; path-based GitHub Actions CI rebuilds only the service whose code changed on each commit.
 
 ## Education & Certifications
 
