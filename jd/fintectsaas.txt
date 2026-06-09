@@ -1,0 +1,25 @@
+JD 1 — Senior DevOps Engineer (Cloud-Native, Startup)
+Company: Fintech SaaS, Series B (~200 employees)
+Location: Remote-friendly / Bengaluru
+About the Role
+We're looking for a Senior DevOps Engineer to own and evolve our cloud infrastructure as we scale from 5M to 50M users. You'll work closely with product and backend teams to accelerate delivery without sacrificing stability.Responsibilities
+
+Design and maintain CI/CD pipelines (GitHub Actions, ArgoCD) for 15+ microservices
+Manage AWS infrastructure using Terraform and Helm; enforce IaC best practices
+Own containerization strategy on EKS; optimize cost and performance
+Implement and maintain observability stack (Prometheus, Grafana, OpenTelemetry)
+Drive incident response, runbooks, and post-mortems
+Collaborate with security team on DevSecOps practices (SAST, secrets management, RBAC)
+Requirements
+
+4–7 years in DevOps/infrastructure roles
+Strong hands-on with AWS (EKS, RDS, S3, IAM, VPC)
+Proficiency in Terraform, Helm, Docker
+Scripting in Python or Bash
+Experience with GitHub Actions or similar CI/CD tools
+Familiarity with monitoring/alerting: Prometheus, Grafana, PagerDuty
+Nice to Have
+
+AWS Certified DevOps Engineer – Professional
+Experience with service meshes (Istio, Linkerd)
+Background in financial systems or high-compliance environments

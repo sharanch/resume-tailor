@@ -1,0 +1,38 @@
+Site Reliability Engineer — Edge Infrastructure
+Akamai Technologies | Remote India / Bengaluru
+
+About the Role
+
+Akamai's Edge Infrastructure team operates one of the world's largest distributed networks, serving trillions of requests daily across 4,000+ points of presence globally. We are looking for a Site Reliability Engineer to help us maintain and improve the reliability, performance, and scalability of this infrastructure.
+
+You will work on systems that sit at the edge of the internet — where latency, availability, and scale are non-negotiable. You will own reliability engineering for core edge services, drive automation of operational workflows, and partner with network and software engineering teams to keep the internet fast and resilient.
+
+Responsibilities
+
+- Own SLOs, error budgets, and reliability targets for edge delivery and DNS infrastructure
+- Lead incident response for high-severity production issues affecting global traffic; drive blameless post-mortems and systemic remediation
+- Build automation tooling to eliminate toil: fleet management scripts, self-healing workflows, and operational runbooks
+- Manage and operate large-scale Linux infrastructure across thousands of globally distributed nodes
+- Design and maintain observability pipelines — metrics collection, log aggregation, alerting, and capacity dashboards
+- Partner with network engineering teams on BGP routing, anycast DNS, and traffic management reliability
+- Contribute to infrastructure-as-code initiatives using Terraform and configuration management tools (Puppet, Ansible, Chef)
+- Perform capacity planning and traffic forecasting for edge PoPs across multiple geographies
+- Participate in 24x7 on-call rotations with a focus on reducing MTTR and alert noise
+
+Requirements
+
+- 3+ years in SRE, systems engineering, or infrastructure operations
+- Strong Linux internals: networking (TCP/IP, BGP basics, DNS), storage, kernel tuning, performance analysis
+- Experience managing large fleets of Linux servers — automation, patching, configuration management
+- Proficiency in Python or Bash for operational tooling and automation
+- Experience with monitoring and alerting stacks: Prometheus, Grafana, Nagios, or equivalent
+- Solid understanding of distributed systems concepts: consistency, replication, failure isolation
+- Experience with incident management: on-call, escalation paths, post-mortems, runbook authoring
+- Familiarity with networking fundamentals: load balancing, CDN concepts, DNS, TLS termination
+
+Nice to Have
+
+- Experience operating CDN or edge networking infrastructure
+- Familiarity with BGP, anycast routing, or traffic engineering at scale
+- Kubernetes or container orchestration experience
+- Open source contributions or public portfolio demonstrating operational depth

@@ -1,0 +1,38 @@
+Site Reliability Engineer — Infrastructure Platform
+Stripe | Remote India / Bengaluru
+
+About the Role
+
+Stripe's Infrastructure Platform team builds and operates the foundation that powers payments for millions of businesses worldwide. We are looking for a Site Reliability Engineer who thrives at the intersection of software engineering and operations — someone who treats infrastructure as code, automates everything worth automating, and takes pride in systems that just work.
+
+You will own reliability for critical distributed systems, drive incident response culture, and partner directly with product engineering teams to ship reliable software faster.
+
+Responsibilities
+
+- Own and improve SLOs, error budgets, and alerting strategies for Stripe's core payment infrastructure
+- Drive incident response end to end: detection, mitigation, post-mortem, and systemic follow-through
+- Build internal platforms and tooling that reduce toil and increase engineering velocity across teams
+- Design, deploy, and operate distributed systems on Kubernetes at scale across multiple availability zones
+- Implement and maintain observability pipelines: metrics (Prometheus/Datadog), structured logs, and distributed tracing
+- Collaborate with software engineers to bake reliability into services from design through deployment
+- Contribute to GitOps-based deployment pipelines (ArgoCD, Helm) and enforce progressive delivery practices
+- Perform capacity planning, load testing, and cost optimization for infrastructure running at global scale
+- Participate in on-call rotations with a strong focus on reducing alert fatigue and improving runbook quality
+
+Requirements
+
+- 3+ years in SRE, Platform Engineering, or Infrastructure Engineering roles
+- Deep Linux knowledge: system calls, networking stack, memory management, file systems
+- Strong experience with Kubernetes: scheduling, autoscaling, network policies, resource management
+- Proficiency in at least one of Python, Go, or Ruby for automation and tooling
+- Solid understanding of distributed systems: consensus, replication, failure modes, CAP tradeoffs
+- Experience designing and operating observability stacks (Prometheus, Grafana, alerting pipelines)
+- Proven track record owning incident response: on-call, SEV classification, blameless post-mortems
+- Comfortable working across time zones in an async-first engineering culture
+
+Nice to Have
+
+- Experience with Terraform or Pulumi for infrastructure as code
+- Familiarity with payment systems, financial infrastructure, or high-compliance environments
+- Open source contributions to reliability, observability, or infrastructure tooling
+- Experience with chaos engineering or resilience testing frameworks
